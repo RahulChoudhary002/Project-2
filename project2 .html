@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Numbers with While Loop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+
+        h1 {
+            color: #007acc;
+        }
+
+        .container {
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .output {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background: #f9f9f9;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007acc;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #005f99;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Generate Random Numbers</h1>
+    <div class="container">
+        <button onclick="generateRandomNumbers()">Generate Numbers</button>
+        <div id="output" class="output"></div>
+    </div>
+
+    <script>
+        function generateRandomNumbers() {
+            let output = "";
+            let count = 0;
+            const maxNumbers = 10; // Number of random numbers to generate
+
+            while (count < maxNumbers) {
+                let randomNumber = Math.floor(Math.random() * 100) + 1; // Random number between 1 and 100
+                output += `<p>Random Number ${count + 1}: ${randomNumber}</p>`;
+                count++;
+            }
+
+            document.getElementById("output").innerHTML = output;
+        }
+    </script>
+</body>
+
+</html>
